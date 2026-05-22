@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+set -eu
+
+APP_DIR="/home/yash/playground/tic-tac-toe"
+BIN="$APP_DIR/target/release/tic_tac_toe"
+
+cd "$APP_DIR"
+
+if [ -x "$BIN" ]; then
+    exec "$BIN"
+fi
+
+exec cargo run --release
